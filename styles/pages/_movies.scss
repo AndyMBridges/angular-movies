@@ -1,0 +1,244 @@
+.search-panel {
+  background-color:$dark-blue;
+  padding:20px 20px 110px 20px;
+  text-align:center;
+  color:#FFF;
+  .search-wrap {
+    width:100%;
+    margin:0 auto;
+    position:relative;
+    @include bp (min-width, $container-hd) {
+      width:631px;
+    }
+    i {
+      position:absolute;
+      line-height:60px;
+      font-size:20px;
+      height:60px;
+      color:$teal;
+      width:60px;
+      top:0;
+      left:0;
+    }
+    .text {
+      border-left:1px solid #edf0f5;
+      text-transform:uppercase;
+      font-family:$bold-font;
+      position:absolute;
+      color:$dark-grey;
+      margin:10px 0;
+      line-height:40px;
+      font-size:14px;
+      width:100px;
+      margin:0;
+      right:0;
+      top:10px;
+    }
+  }
+  input.movie-search {
+    border-radius:30px;
+    color:$light-grey;
+    font-size:20px;
+    transition: all .2s linear;
+    padding:20px 100px 20px 60px;
+    width:100%;
+    height:60px;
+    border:0;
+    &.ng-not-empty {
+      background-color:$light-grey;
+      color:$dark-blue;
+    }
+  }
+  h1 {
+    font-family:$bold-font;
+    margin-bottom:20px;
+    margin-top:15px;
+    font-size:45px;
+  }
+  h2 {
+    font-family:$light-font;
+    margin-bottom:55px;
+    color:$light-grey;
+    font-size:30px;
+    span {
+      color:$teal;
+    }
+  }
+}
+.main {
+  background-color:$teal;
+  min-height:200px;
+  padding:20px 0;
+  &.lister {
+    padding:50px 0;
+  }
+  .item {
+    width:100%;
+    float:left;
+    padding:15px;
+    @include bp (min-width, $container-tablet) {
+      width:50%;
+    }
+    @include bp (min-width, $container-hd) {
+      width: 33.33%;
+      &:nth-child(3n+5) { // First Child
+        padding-left: 10px;
+        padding-right: 20px;
+      }
+      &:nth-of-type(3n+1) { // Last Child
+        padding-right:10px;
+        padding-left:20px;
+      }
+    }
+    li {
+      text-transform:uppercase;
+      font-family: $bold-font;
+      color: $light-blue;
+      font-size:11px;
+    }
+    h3 {
+      font-family: $bold-font;
+      color: $dark-grey;
+      font-size:22px;
+      margin:15px 0;
+    }
+    p {
+      color: $light-grey;
+      font-family: $regular-font;
+      font-size:15px;
+    }
+    .inner {
+      background-color:#FFF;
+      border-radius:3px;
+      padding:23px;
+      float:left;
+      width:100%;
+      @include bp (min-width, $container-tablet) {
+        height:175px;
+      }
+      .content {
+        padding-left:22px;
+        float:left;
+        width:70%;
+        @include bp (min-width, $container-tablet) {
+          max-width:210px;
+        }
+        @include bp (min-width, $container-desktop) {
+          max-width:310px;
+        }
+        @include bp (min-width, $container-hd) {
+          width:236px;
+        }
+        @include bp (min-width, $container-hd-lg) {
+          width:263px;
+        }
+      }
+    }
+    .poster-wrap {
+      float:left;
+      width:30%;
+      @include bp (min-width, $container-tablet) {
+        width:87px;
+        max-height:128px;
+      }
+      img {
+        width:100%;
+        float:left;
+        @include bp (min-width, $container-tablet) {
+          max-height:128px;
+        }
+      }
+    }
+  }
+  .no-results {
+    text-align:center;
+    padding:0 20px;
+    font-size:30px;
+    color:#FFF;
+  }
+  .filter {
+    margin-bottom:20px;
+    padding:0 20px;
+    .results-text {
+      font-size:34px;
+      font-family:$light-font;
+      margin:0;
+      float:left;
+      color:#FFF;
+    }
+    .filter-btns {
+      margin-top:13px;
+      float:right;
+      p.sort {
+        text-transform:uppercase;
+        margin: 0 15px 0 0;
+        line-height:30px;
+        font-size:11px;
+        float:left;
+        color:#FFF;
+      }
+      li {
+        list-style-type:none;
+        float:left;
+        &.title {
+          margin-right:10px;
+        }
+        &.active {
+          a {
+            background-color:$dark-teal;
+            border:1px solid $dark-teal;
+            color:#FFF;
+            &:hover {
+              border-color:#FFF;
+              &:after {
+                color:#FFF;
+              }
+            }
+          }
+        }
+        a {
+          border:1px solid #FFF;
+          text-transform:uppercase;
+          font-family:$bold-font;
+          background-color:#FFF;
+          text-align:center;
+          border-radius:3px;
+          line-height:30px;
+          cursor:pointer;
+          padding:0 15px;
+          font-size:11px;
+          outline:none;
+          height:30px;
+          float:left;
+          position: relative;
+          overflow: hidden;
+          transition: .4s ease;
+          span {
+            transform: translate3d(0, 0, 0);
+            display: block;
+            transition: .4s ease;
+          }
+          &:hover {
+            border-color: #000;
+            span {
+              transform: translate3d(0, -200%, 0);
+            }
+            &:after {
+              transform: translate3d(0, 0, 0);
+            }
+          }
+          &:after {
+            content: attr(data-title);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: translate3d(0, 200%, 0);
+            transition: .4s ease;
+          }
+        }
+      }
+    }
+  }
+}

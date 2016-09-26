@@ -1,0 +1,36 @@
+<section class="search-panel">
+  <div class="container">
+    <h1>Angular Movies</h1>
+    <h2>The Open <span>Movie</span> Database</h2>
+    <div class="search-wrap">
+      <i class="icon-search"></i>
+      <input class="movie-search" type="text" ng-model="movieName" ng-change="findMovie()" placeholder="Search for anything right here, right now..." />
+      <p class="text">Search</p>
+    </div>
+  </div>
+</section>
+<section class="main lister clearfix">
+  <div class="container">
+    <div ng-show="movies.length" class="filter clearfix">
+      <p class="results-text">Results</p>
+      <div class="filter-btns">
+        <p class="sort">Sort by</p>
+        <li ng-class="active('-Title')" class="title"><a ng-click="order = '-Title'" data-title="Title" ><span>Title</span></a></li>
+        <li ng-class="active('-Year')" ><a ng-class="active('Year')" ng-click="order = '-Year'" data-title="Release Year"><span>Release Year</span></a></li>
+      </div>
+    </div>
+    <p class="no-results" ng-show="!movies.length">Begin typing to search for movies!</p>
+    <article class="item" ng-repeat="movie in movies | orderBy:order:true">
+        <a class="inner" ng-href="#/movies/{{ movie.Title|slugify }}">
+          <div class="poster-wrap">
+            <img ng-if="movie.Poster" ng-src="{{ movie.Poster }}" />
+          </div>
+          <div class="content">
+            <li class="type">{{ movie.Type }}</li>
+            <h3 class="title">{{ movie.Title }}</h3>
+            <p class="year">{{ movie.Year }}</p>
+          </div>
+        </a>
+    </article>
+  </div>
+</section>

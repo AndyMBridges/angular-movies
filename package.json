@@ -1,0 +1,20 @@
+{
+  "name": "angular-movies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "css": "pleeease compile",
+    "watch:css": "onchange 'styles/**/*.scss' -- npm run css",
+    "watch": "parallelshell 'npm run watch:css'"
+  },
+  "author": "Andy Bridges",
+  "license": "ISC",
+  "devDependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "onchange": "^1.1.0",
+    "parallelshell": "^1.2.0",
+    "pleeease": "^3.4.0"
+  }
+}

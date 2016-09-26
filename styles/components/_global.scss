@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'GT-Walsheim-Medium';
+    src: url('../fonts/GT-Walsheim-Medium.eot');
+    src: url('../fonts/GT-Walsheim-Medium.woff') format('woff'),
+         url('../fonts/GT-Walsheim-Medium.ttf') format('truetype'),
+         url('../fonts/GT-Walsheim-Medium.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'GT-Walsheim-Light';
+    src: url('../fonts/GT-Walsheim-Light.eot');
+    src: url('../fonts/GT-Walsheim-Light.woff') format('woff'),
+         url('../fonts/GT-Walsheim-Light.ttf') format('truetype'),
+         url('../fonts/GT-Walsheim-Light.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'GT-Walsheim-Bold';
+    src: url('../fonts/GT-Walsheim-Bold.eot');
+    src: url('../fonts/GT-Walsheim-Bold.woff') format('woff'),
+         url('../fonts/GT-Walsheim-Bold.ttf') format('truetype'),
+         url('../fonts/GT-Walsheim-Bold.svg') format('svg');
+}
+
+html {
+    box-sizing: border-box;
+    font-family: 'icomoon';
+}
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.clearfix {
+    display: inline-block;
+}
+/* start commented backslash hack \*/
+* html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
+/* close commented backslash hack */
+body {
+    margin: 0;
+    background-color:$teal;
+    min-height:100vh;
+    font-family: $regular-font;
+}
+
+.container {
+    max-width:1280px;
+    margin:0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: $bold-font;
+    font-weight:normal;
+    line-height:1;
+}
+a {
+    text-decoration: none;
+}
+input {
+    outline: none;
+}

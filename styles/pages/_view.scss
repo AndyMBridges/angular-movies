@@ -1,0 +1,35 @@
+.detail-wrap {
+  padding:0 20px;
+  h1 {
+    margin-top:0;
+  }
+}
+.item-detail {
+  background-color:#FFF;
+  border-radius:3px;
+  padding:20px;
+  float:left;
+  .item-info, .movie-poster {
+    float:left;
+  }
+  .movie-poster {
+    width:100%;
+    @include bp (min-width, $container-tablet) {
+      width:40%;
+    }
+    @include bp (min-width, $container-desktop) {
+      width:30%;
+    }
+  }
+  .item-info {
+    width:100%;
+    padding:20px 0;
+    @include bp (min-width, $container-tablet) {
+      padding:0 20px;
+      width:60%;
+    }
+    @include bp (min-width, $container-desktop) {
+      width:70%;
+    }
+  }
+}

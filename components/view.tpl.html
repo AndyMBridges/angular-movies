@@ -1,0 +1,17 @@
+<section class="main clearfix">
+  <div class="container detail-wrap">
+    <article class="item-detail">
+      <img class="movie-poster" ng-src="{{ movie.Poster }}" />
+      <div class="item-info">
+        <h1>{{ movie.Title }}</h1>
+        <p class="plot">{{ movie.Plot }}</p>
+        <p class="genre"><span>Genre: </span></span>{{ movie.Genre }}</p>
+        <p class="actors"><span>Actors: </span>{{ movie.Actors }}</p>
+        <p class="rated"><span>Rated: </span>{{ movie.Rated }}</p>
+        <p class="runtime"><span>Runtime: </span>{{ movie.Runtime }}</p>
+        <p class="imdb-rating"><span>IMDb Rating: </span>{{ movie.imdbRating }}</p>
+        <p class="awards"><span>Awards: </span>{{ movie.Awards }}</p>
+      </div>
+    </article>
+  </div>
+</section>

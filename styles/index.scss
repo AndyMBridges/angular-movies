@@ -1,0 +1,15 @@
+// Import Variables
+@import 'components/variables';
+// Import Mixins
+@import 'mixins/breakpoint';
+@import 'mixins/retinaimage';
+// Import Normalize
+@import 'vendor/normalize';
+// Import Fonts
+@import 'fonts/fonts';
+// Import Core
+@import 'components/global';
+@import 'components/header';
+// Import Pages
+@import 'pages/movies';
+@import 'pages/view';
